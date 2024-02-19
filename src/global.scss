@@ -1,0 +1,51 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+$bg-color: #f3f6f9;
+$color-white: #ffffff;
+$icon-color: #aeb8c4;
+$text-primary: #4c5968;
+$bitcoin-logo-color: #fa9c21;
+$percent-color: #ee225d;
+$lower-color: #ef2755;
+$higher-color: #1ec070;
+
+@mixin flexRow($gap) {
+  display: flex;
+  gap: $gap;
+}
+
+@mixin flexColumn($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+@mixin spaceBtw() {
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin center() {
+  justify-content: center;
+  align-items: center;
+}
+@mixin textStyle($size, $color, $font-weight) {
+  font-size: $size;
+  color: $color;
+  font-weight: $font-weight;
+}
+@mixin buySellCon() {
+  width: 38.5px;
+  height: 38.5px;
+  border-radius: 50%;
+  @include flexRow(0);
+  @include center;
+}

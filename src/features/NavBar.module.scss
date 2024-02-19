@@ -1,0 +1,11 @@
+@import "../global.scss";
+
+.NavBar {
+  @include flexRow(0);
+  @include spaceBtw;
+  padding: 2.5rem 2rem;
+  background-color: $color-white;
+  h1 {
+    @include textStyle(2.6rem, $text-primary, 500);
+  }
+}

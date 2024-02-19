@@ -1,0 +1,71 @@
+@import "../global.scss";
+.amountCard {
+  max-width: 30.456rem;
+  width: 90%;
+  background-color: $color-white;
+  margin: auto;
+  border-radius: 1rem;
+  max-height: 18.863rem;
+  height: 100%;
+  padding: 1rem 2.1rem;
+
+  > div {
+    @include flexRow(0);
+    @include spaceBtw;
+    margin-bottom: 1rem;
+    .cardLeft {
+      @include flexRow(1.8rem);
+      @include center;
+      p {
+        @include textStyle(1.284rem, $text-primary, 600);
+      }
+    }
+    span {
+      @include textStyle(1.284rem, $icon-color, 600);
+    }
+  }
+  .iconBitcoin {
+    width: 3.853rem;
+    height: 3.853rem;
+    color: $bitcoin-logo-color;
+  }
+
+  h4 {
+    @include textStyle(3rem, $text-primary, 500);
+  }
+
+  .usdAmt {
+    @include flexRow(0);
+    @include spaceBtw;
+    margin-bottom: 0.8rem;
+    h2 {
+      @include textStyle(1.8rem, $icon-color, 500);
+    }
+    > div {
+      padding: 0.2rem 1rem;
+      background-color: $percent-color;
+      border-radius: 2rem;
+
+      p {
+        @include center;
+        @include textStyle(1.284rem, $color-white, 600);
+      }
+    }
+  }
+  .btnDown {
+    @include flexRow(0);
+    @include center;
+    margin-bottom: 2.5rem;
+    .downM {
+      @include textStyle(2.616rem, $icon-color, 900);
+    }
+  }
+}
+
+.calLnkCont {
+  padding: 1.8rem 0rem;
+  @include flexRow(0);
+  @include spaceBtw;
+  width: 80%;
+  margin: auto;
+}

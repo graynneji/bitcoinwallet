@@ -1,0 +1,24 @@
+@import "../global.scss";
+.buySellCon {
+  @include flexRow(0);
+  @include spaceBtw;
+  width: 90%;
+  margin: auto;
+  > div {
+    max-width: 14.163rem;
+    max-height: 10.103rem;
+    width: 100%;
+    background-color: $color-white;
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+    .buy {
+      @include buySellCon;
+      background: linear-gradient(#18bbfa, #1c80f3);
+    }
+
+    .sell {
+      @include buySellCon;
+      background: linear-gradient(#fe5e82, #fc2f9c);
+    }
+  }
+}

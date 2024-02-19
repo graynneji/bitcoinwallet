@@ -1,0 +1,9 @@
+@import "../global.scss";
+.CalLink {
+  @include textStyle(1.2rem, $icon-color, 500);
+  text-align: center;
+  border: none;
+  button {
+    border: none;
+  }
+}

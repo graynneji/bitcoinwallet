@@ -1,0 +1,20 @@
+@import "../global.scss";
+.container {
+  max-width: 34.872rem;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+  gap: 2rem;
+  background-color: $bg-color;
+}
+.header {
+  background-color: red;
+}
+.main {
+  background-color: $bg-color;
+}
+.footer {
+  background-color: pink;
+}
