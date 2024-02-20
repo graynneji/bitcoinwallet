@@ -6,8 +6,29 @@
 html {
   font-size: 62.5%;
 }
+@font-face {
+  font-family: "SFProDisplay-Regular";
+  src: url("./fonts/SFProDisplay-Regular.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay-Semibold";
+  src: url("./fonts/SFProDisplay-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay-Bold";
+  src: url("./fonts/SFProDisplay-Bold.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "SFProDisplay-Regular", sans-serif;
+  // font-family: "Poppins", sans-serif;
 }
 
 $bg-color: #f3f6f9;
@@ -43,8 +64,8 @@ $higher-color: #1ec070;
   font-weight: $font-weight;
 }
 @mixin buySellCon() {
-  width: 38.5px;
-  height: 38.5px;
+  width: 3.85rem;
+  height: 3.85rem;
   border-radius: 50%;
   @include flexRow(0);
   @include center;

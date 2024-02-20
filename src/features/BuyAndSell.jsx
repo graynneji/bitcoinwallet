@@ -5,15 +5,15 @@ function BuyAndSell() {
     <div className={style.buySellCon}>
       <div>
         <div className={style.buy}>
-          <FaDollarSign />
-          <span>Buy BTC</span>
+          <FaDollarSign className={style.dollarIcon} />
         </div>
+        <span>Buy BTC</span>
       </div>
       <div>
         <div className={style.sell}>
-          <FaDollarSign />
-          <span>Sell BTC</span>
+          <FaDollarSign className={style.dollarIcon} />
         </div>
+        <span>Sell BTC</span>
       </div>
     </div>
   );

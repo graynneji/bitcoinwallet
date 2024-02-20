@@ -2,20 +2,35 @@ import PropTypes from "prop-types";
 import style from "./CalendarLink.module.scss";
 import { useDispatch } from "react-redux";
 import { changedMarket } from "../app/reducer/market";
+import { useState } from "react";
 
-function CalendarLink({ children }) {
+function CalendarLink({ market }) {
   const dispatch = useDispatch();
+  const [timeData, setTimeData] = useState("Week");
+
   const handleClick = (value) => {
     dispatch(changedMarket(value));
     console.log(value);
+    setTimeData(value);
   };
+
   return (
-    <div onClick={() => handleClick(children)} className={style.CalLink}>
-      {children}
-    </div>
+    <>
+      {market?.map((mar) => (
+        <div
+          key={mar.time}
+          className={`${style.CalLink} ${
+            mar.time === timeData && style.active
+          }`}
+          onClick={() => handleClick(mar?.time)}
+        >
+          {mar.time}
+        </div>
+      ))}
+    </>
   );
 }
 CalendarLink.propTypes = {
-  children: PropTypes.node,
+  market: PropTypes.array,
 };
 export default CalendarLink;

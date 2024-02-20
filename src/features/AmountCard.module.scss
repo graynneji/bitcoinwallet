@@ -5,14 +5,19 @@
   background-color: $color-white;
   margin: auto;
   border-radius: 1rem;
-  max-height: 18.863rem;
-  height: 100%;
   padding: 1rem 2.1rem;
-
+  transition: max-height 0.3s ease;
+  box-shadow: 0 2.5rem 2.5rem -25px rgb(0 0 0 / 0.2);
+  &.heightMaxTwo {
+    max-height: 25.863rem;
+  }
+  &.heightMaxOne {
+    max-height: 18.863rem;
+  }
   > div {
     @include flexRow(0);
     @include spaceBtw;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     .cardLeft {
       @include flexRow(1.8rem);
       @include center;
@@ -32,17 +37,18 @@
 
   h4 {
     @include textStyle(3rem, $text-primary, 500);
+    margin-bottom: 0.5rem;
   }
 
   .usdAmt {
     @include flexRow(0);
     @include spaceBtw;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.5rem;
     h2 {
       @include textStyle(1.8rem, $icon-color, 500);
     }
     > div {
-      padding: 0.2rem 1rem;
+      padding: 0.476rem 1.169rem;
       background-color: $percent-color;
       border-radius: 2rem;
 
@@ -58,6 +64,30 @@
     margin-bottom: 2.5rem;
     .downM {
       @include textStyle(2.616rem, $icon-color, 900);
+    }
+    .downUp {
+      transform: rotate(180deg);
+      @include textStyle(2.616rem, $icon-color, 900);
+    }
+  }
+  .dropDown {
+    @include flexRow(0);
+
+    .btn {
+      padding: 1rem 4rem;
+      background-color: #fa9c21; /* Set your desired color */
+      color: white;
+      border: none;
+      border-radius: 50rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease;
+    }
+    .sell {
+      background-color: $lower-color;
+    }
+    .buy {
+      background-color: $higher-color;
     }
   }
 }

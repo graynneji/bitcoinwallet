@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import AmountCard from "../features/AmountCard";
 import BuyAndSell from "../features/BuyAndSell";
 import CalendarLink from "../features/CalendarLink";
@@ -7,6 +8,7 @@ import NavBar from "../features/NavBar";
 import style from "./AppLayout.module.scss";
 
 function AppLayout() {
+  const { isOpen } = useSelector((state) => state.navToggle);
   return (
     <div className={style.container}>
       <header className={style.header}>
@@ -25,6 +27,9 @@ function AppLayout() {
         <BuyAndSell />
       </main>
       <MobileMenu />
+      <div
+        className={isOpen ? `${style.overlay} ${style.active}` : style.overlay}
+      ></div>
     </div>
   );
 }

@@ -1,13 +1,5 @@
-/* eslint-disable no-unused-vars */
 import style from "./Chart.module.scss";
-import {
-  LineChart,
-  Line,
-  ResponsiveContainer,
-  AreaChart,
-  Area,
-  Dot,
-} from "recharts";
+import { ResponsiveContainer, AreaChart, Area, Dot, Tooltip } from "recharts";
 import { GoDotFill } from "react-icons/go";
 import { useSelector } from "react-redux";
 
@@ -30,16 +22,35 @@ function Chart() {
         // height={168.97}
         data={data}
         margin={{
-          top: 50,
+          top: 40,
           right: 30,
         }}
       >
+        <Tooltip />
+
+        <circle cx={25} cy={97} r={3.5} fill="#fa9c21" />
+
+        <text x={40} y={100} fontWeight={600} fontSize={12.84} fill="#4c5968">
+          1 BTC = {changeMarket[0]?.btcToUsd}
+        </text>
+
         <Area
           type="monotone"
           dataKey="uv"
           strokeWidth={3.12}
           stroke="#fa9c21"
           fill="rgba(250, 156, 33, 0.1)"
+          dot={(props) => (
+            <Dot
+              {...props}
+              cx={272}
+              cy={42}
+              fill="#fa9c21"
+              r={6}
+              stroke="rgba(250, 156, 33, 0.06)"
+              strokeWidth={6}
+            />
+          )}
         />
       </AreaChart>
     </ResponsiveContainer>

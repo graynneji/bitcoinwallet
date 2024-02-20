@@ -7,6 +7,7 @@ import CalendarLink from "./CalendarLink";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { marketData } from "../app/thunk/marketThunk";
+import { toggleMenu } from "../app/reducer/toggleSlice";
 function AmountCard({
   cryptoName,
   cryptoSym,
@@ -15,7 +16,13 @@ function AmountCard({
   percentage,
 }) {
   const { market, error, loading } = useSelector((state) => state.market);
+  const { isOpen } = useSelector((state) => state.toggle);
   const dispatch = useDispatch();
+  console.log(market);
+
+  const handleToggle = () => {
+    dispatch(toggleMenu());
+  };
 
   useEffect(
     function () {
@@ -25,7 +32,11 @@ function AmountCard({
   );
   return (
     <>
-      <div className={style.amountCard}>
+      <div
+        className={`${style.amountCard} ${
+          isOpen ? style.heightMaxTwo : style.heightMaxOne
+        }`}
+      >
         <div>
           <div className={style.cardLeft}>
             <SiBitcoinsv className={style.iconBitcoin} />
@@ -41,14 +52,21 @@ function AmountCard({
           </div>
         </div>
         <div className={style.btnDown}>
-          <TbChevronCompactDown className={style.downM} />
+          <TbChevronCompactDown
+            onClick={handleToggle}
+            className={`${isOpen ? style.downUp : style.downM}`}
+          />
         </div>
+        {isOpen && (
+          <div className={`${isOpen ? style.dropDown : style.displayNone}`}>
+            <button className={`${style.btn} ${style.buy}`}>Buy</button>
+            <button className={`${style.btn} ${style.sell}`}>Sell</button>
+          </div>
+        )}
       </div>
 
       <div className={style.calLnkCont}>
-        {market.map((mar, index) => (
-          <CalendarLink key={index}>{mar?.time}</CalendarLink>
-        ))}
+        <CalendarLink market={market} />
       </div>
     </>
   );

@@ -8,6 +8,7 @@
   @include center;
   background-color: $color-white;
   margin-bottom: 2rem;
+  box-shadow: 0 2.5rem 2.5rem -25px rgb(0 0 0 / 0.2);
   .chartHead {
     @include flexRow(0);
     @include spaceBtw;
@@ -18,7 +19,7 @@
       @include flexRow(0.9rem);
       @include spaceBtw;
       span {
-        @include textStyle(1.2rem, $icon-color, 0);
+        @include textStyle(1.2rem, $icon-color, 600);
       }
       .iconL {
         color: $lower-color;

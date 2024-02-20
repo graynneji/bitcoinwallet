@@ -3,21 +3,32 @@
   @include flexRow(0);
   @include spaceBtw;
   width: 90%;
+  max-width: 30.456rem;
   margin: auto;
   > div {
     max-width: 14.163rem;
     max-height: 10.103rem;
     width: 100%;
     background-color: $color-white;
-    padding: 2rem 4rem;
+    padding: 1.8rem 4rem;
     border-radius: 1rem;
+    @include flexColumn(1rem);
+    @include center;
+    .dollarIcon {
+      @include textStyle(1.85rem, $color-white, 900);
+    }
+    span {
+      @include textStyle(1.284rem, $text-primary, 500);
+    }
     .buy {
       @include buySellCon;
+      box-shadow: 0 2.5rem 2.5rem -25px rgb(0 0 0 / 0.2);
       background: linear-gradient(#18bbfa, #1c80f3);
     }
 
     .sell {
       @include buySellCon;
+      box-shadow: 0 2.5rem 2.5rem -25px rgb(0 0 0 / 0.2);
       background: linear-gradient(#fe5e82, #fc2f9c);
     }
   }

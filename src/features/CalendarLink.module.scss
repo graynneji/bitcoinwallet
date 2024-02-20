@@ -2,8 +2,16 @@
 .CalLink {
   @include textStyle(1.2rem, $icon-color, 500);
   text-align: center;
+  cursor: pointer;
   border: none;
-  button {
-    border: none;
+  color: none;
+  padding: 0.5rem 1.47rem;
+
+  border-radius: 3rem;
+  font-size: 1.2rem;
+
+  &.active {
+    background-color: $icon-color;
+    color: $color-white;
   }
 }
