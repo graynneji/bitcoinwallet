@@ -86,10 +86,12 @@
       transition: background-color 0.3s ease;
     }
     .sell {
-      background-color: $lower-color;
+      // background-color: $lower-color;
+      background: linear-gradient(#fe5e82, #fc2f9c);
     }
     .buy {
-      background-color: $higher-color;
+      background: linear-gradient(#18bbfa, #1c80f3);
+      // background-color: $higher-color;
     }
   }
 }
