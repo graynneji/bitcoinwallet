@@ -1,6 +1,6 @@
 @import "../global.scss";
 .CalLink {
-  @include textStyle(1.2rem, $icon-color, 500);
+  @include textStyle(1.2rem, $icon-color, 600);
   text-align: center;
   cursor: pointer;
   border: none;
