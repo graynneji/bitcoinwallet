@@ -7,7 +7,7 @@
   padding: 2.5rem 2rem;
   background-color: $color-white;
   h1 {
-    @include textStyle(2.6rem, $text-primary, 500);
+    @include textStyle(2.6rem, $text-primary, 600);
   }
   .navIcon {
     @include textStyle(2.1rem, $icon-color, 900);
