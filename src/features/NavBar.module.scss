@@ -12,11 +12,13 @@
   .navIcon {
     @include textStyle(2.1rem, $icon-color, 900);
     z-index: 99999;
+    cursor: pointer;
   }
   .navIcoNin {
     @include textStyle(2.1rem, $icon-color, 900);
     z-index: 99999;
     transform: rotate(90deg);
+    cursor: pointer;
   }
   .navModal {
     position: absolute;
