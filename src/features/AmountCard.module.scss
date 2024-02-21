@@ -45,7 +45,7 @@
     @include spaceBtw;
     margin-bottom: 1.5rem;
     h2 {
-      @include textStyle(1.8rem, $icon-color, 500);
+      @include textStyle(1.8rem, $icon-color, 600);
     }
     > div {
       padding: 0.476rem 1.169rem;
